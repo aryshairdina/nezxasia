@@ -1,82 +1,121 @@
 <!doctype html>
-<html><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FAQ</title>
 <link rel="stylesheet" href="styles.css">
-</head><body>
+</head>
+
+<body>
 <div class="container">
-  <header class="topbar"><div class="brand"><div class="logo">NA</div><div><strong>FAQ</strong><div class="muted">Common questions — Knowledge Capture</div></div></div><div class="top-actions"><div class="avatar">A</div></div></header>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">NA</div>
+      <div>
+        <strong>Frequently Asked Questions</strong>
+        <div class="muted">Common questions & knowledge reference</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="avatar">A</div>
+    </div>
+  </header>
+
+  <!-- LAYOUT -->
   <div class="layout">
+
+    <!-- SIDEBAR -->
     <aside class="sidebar">
       <a class="nav-item" href="index.html">Dashboard</a>
       <a class="nav-item" href="help.html">Help Center</a>
-      <a class="nav-item active" href="faq.html">FAQ</a></aside>
+      <a class="nav-item active" href="fa.html">FAQ</a>
       <a class="nav-item" href="feedback.html">Feedback</a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
     <main class="main">
-      <!-- SUPPORT OPTIONS -->
-      <div class="grid2">
-        <div class="card">
-          <h3>Submit Support Ticket</h3>
-          <p class="muted">For detailed issues that require follow-up</p>
+
+      <div class="page-head">
+        <div>
+          <h2>FAQ</h2>
+          <div class="muted">
+            Frequently asked questions related to the Knowledge Management portal
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ LIST -->
+      <div class="card">
+        <h3>General Questions</h3>
+
+        <div class="faq-item">
+          <strong>How do I upload a SOP or policy document?</strong>
+          <div class="muted">
+            Go to the “Submit Document” page, complete the metadata fields, and upload the document for approval.
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Live Support Chat</h3>
-          <p class="muted">Quick assistance from support team</p>
-          <div style="height:8px"></div>
-          <button class="btn primary" onclick="location.href='chat-support.html'">
-            Chat with Support
-          </button>
+        <div class="faq-item">
+          <strong>Who can access restricted documents?</strong>
+          <div class="muted">
+            Access depends on your role. Sensitive documents are available only to authorised staff.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <strong>How do I find an expert in a specific area?</strong>
+          <div class="muted">
+            Use the Expert Directory to search by skill, department, or expertise area.
+          </div>
         </div>
       </div>
 
       <div style="height:14px"></div>
 
-      <!-- TICKET FORM -->
-      <div class="card form-grid">
-        <div class="form-row">
-          <label>Issue Title</label>
-          <input class="input">
-        </div>
-
-        <div class="form-row">
-          <label>Priority</label>
-          <select class="input">
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-          </select>
-        </div>
-
-        <div class="form-row" style="grid-column:1 / -1">
-          <label>Details</label>
-          <textarea></textarea>
-        </div>
-
-        <div class="form-row">
-          <label>Attach screenshot</label>
-          <input class="input" type="file" accept="image/*">
-        </div>
-
-        <div class="form-row" style="grid-column:1 / -1;display:flex;justify-content:flex-end">
-          <button class="btn primary" onclick="alert('Ticket submitted (UI prototype)')">
-            Submit Ticket
-          </button>
-        </div>
-      </div>
-
-      <div style="height:12px"></div>
-
-      <!-- SUPPORT INFO -->
       <div class="card">
-        <h4>Support Contacts</h4>
-        <div class="muted">
-          support@nezxasia.com • +60 3-1234 5678
+        <h3>Learning & Training</h3>
+
+        <div class="faq-item">
+          <strong>Where can I access training materials?</strong>
+          <div class="muted">
+            Training modules and onboarding guides are available under the Training & Onboarding section.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <strong>Is completion of training mandatory?</strong>
+          <div class="muted">
+            Yes, mandatory training modules must be completed to comply with internal policies.
+          </div>
         </div>
       </div>
 
+      <div style="height:14px"></div>
+
+      <div class="card">
+        <h3>Support & Help</h3>
+
+        <div class="faq-item">
+          <strong>What should I do if I face a system issue?</strong>
+          <div class="muted">
+            Visit the Contact Support page to submit a support ticket or chat with the support team.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <strong>Can I suggest improvements to the KM portal?</strong>
+          <div class="muted">
+            Yes, you can submit your suggestions through the Feedback page.
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
       <div class="footer muted">
-        Contact Support — ticketing & chat UI (Knowledge Application)
+        FAQ — explicit knowledge base to reduce repeated queries and support KM efficiency
       </div>
 
     </main>
