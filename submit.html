@@ -1,0 +1,156 @@
+<!doctype html>
+<html><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Submit — (Knowledge Capture)</title>
+  <link rel="stylesheet" href="styles.css">
+</head><body>
+  <div class="container">
+    <header class="topbar">
+      <div class="brand"><div class="logo">NA</div><div><strong>NezxAsia</strong><div class="muted">Knowledge Capture</div></div></div>
+      <div class="top-actions">
+        <div class="search"><input placeholder="Search documents, experts..." /></div>
+        <div class="avatar">A</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="nav-item" href="index.html">Dashboard</a>
+        <a class="nav-item active" href="submit.html">Submit Document</a>
+        <a class="nav-item" href="directory.html">Expert Directory</a>
+        <a class="nav-item" href="training.html">Training</a>
+        <a class="nav-item" href="help.html">Help Center</a>
+      </aside>
+
+      <main class="main">
+        <div class="page-head">
+          <div><h2>Submit Lessons Learned / Document</h2><div class="muted">Capture tacit knowledge, SOPs and meeting notes.</div></div>
+    
+        </div>
+
+        <div class="card">
+          <form class="form-grid" action="#" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+              <label>Document Title</label>
+              <input class="input" name="title" placeholder="e.g. Suspicious Transaction SOP" required>
+            </div>
+
+            <div class="form-row">
+              <label>Document Owner (Person/Team)</label>
+              <input class="input" name="owner" placeholder="e.g. Hana Ahmed / Compliance">
+            </div>
+
+            <div class="form-row">
+              <label>Department</label>
+              <select class="input"><option>Compliance</option><option>Finance</option><option>IT</option><option>HR</option></select>
+            </div>
+
+            <div class="form-row">
+              <label>Country / Branch</label>
+              <select class="input"><option>Malaysia</option><option>Singapore</option><option>Indonesia</option></select>
+            </div>
+
+            <div class="form-row" style="grid-column:1 / -1">
+              <label>Summary / Lessons Learned</label>
+              <textarea name="summary" placeholder="Short summary and key takeaways"></textarea>
+            </div>
+
+            <div class="form-row">
+              <label>Document Type</label>
+              <select class="input"><option>Policy</option><option>SOP</option><option>Guide</option><option>Meeting Notes</option></select>
+            </div>
+
+            <div class="form-row">
+              <label>Sensitivity</label>
+              <select class="input"><option>Public</option><option>Internal</option><option>Confidential</option></select>
+            </div>
+
+            <div class="form-row">
+              <label>Version</label>
+              <input class="input" name="version" placeholder="v1.0">
+            </div>
+
+            <div class="form-row">
+              <label>Effective / Expiry Date</label>
+              <input type="date" class="input" name="effective">
+            </div>
+
+            <div class="form-row" style="grid-column:1 / -1">
+              <label>Tags (comma separated)</label>
+              <input class="input" name="tags" placeholder="onboarding,aml,customer">
+            </div>
+
+            <div class="form-row">
+              <label>Upload File</label>
+              <input type="file" class="input" accept=".pdf,.docx,.doc,.xlsx">
+            </div>
+
+            <div class="form-row">
+              <label>Related Experts</label>
+              <input class="input" placeholder="Hana Ahmed; Rizal K">
+            </div>
+
+            <div class="form-row" style="grid-column:1 / -1">
+              <div class="muted">Version history and approval will appear in the metadata panel after submission (UI only in this prototype).</div>
+            </div>
+
+            <div class="actions" style="grid-column:1 / -1">
+              <button class="btn ghost" type="reset">Reset</button>
+              <button class="btn primary" type="button" onclick="alert('UI prototype — submission simulated')">Submit Document</button>
+            </div>
+          </form>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <!-- Metadata + Version panel (UI only) -->
+        <div class="grid2">
+          <div class="card meta-panel">
+            <h3>Document Metadata (preview)</h3>
+            <div class="meta-row"><div><strong>Title</strong></div><div class="muted">—</div></div>
+            <div class="meta-row"><div><strong>Owner</strong></div><div class="muted">Hana Ahmed</div></div>
+            <div class="meta-row"><div><strong>Department</strong></div><div class="muted">Compliance</div></div>
+            <div class="meta-row"><div><strong>Country</strong></div><div class="muted">Malaysia</div></div>
+            <div class="meta-row"><div><strong>Sensitivity</strong></div><div class="badge">Internal</div></div>
+            <div style="height:10px"></div>
+            <h4>Version History</h4>
+            <ul style="margin:0;padding:0;list-style:none">
+              <li style="padding:8px 0;border-bottom:1px dashed rgba(10,20,30,0.03)"><strong>v1.1</strong> — Hana — 2025-11-28</li>
+              <li style="padding:8px 0;border-bottom:1px dashed rgba(10,20,30,0.03)"><strong>v1.0</strong> — Hana — 2025-10-10</li>
+            </ul>
+          </div>
+
+          <div class="card meta-panel">
+            <h3>Access & Actions</h3>
+            <div class="muted">Access level: <strong>Internal</strong></div>
+            <div style="height:10px"></div>
+            <button class="btn primary" onclick="openModal('request')">Request Access</button>
+            <button class="btn ghost" style="margin-left:8px" onclick="alert('UI — send approval request')">Request Approval</button>
+
+            <div style="height:12px"></div>
+            <h4>Audit (recent)</h4>
+            <div class="small muted">2025-11-28 — Hana uploaded v1.1</div>
+            <div class="small muted">2025-10-10 — Hana uploaded v1.0</div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Request Access Modal (UI-only) -->
+  <div id="modal" class="modal-back">
+    <div class="modal">
+      <h3>Request Access</h3>
+      <p class="muted">This will send an access request to the document owner (UI-only).</p>
+      <div style="height:8px"></div>
+      <div class="form-row"><label>Your reason</label><textarea></textarea></div>
+      <div style="height:12px"></div>
+      <div style="text-align:right"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="alert('Request sent (UI prototype)');closeModal()">Send Request</button></div>
+    </div>
+  </div>
+
+<script>
+function openModal(k){document.getElementById('modal').style.display='flex'}
+function closeModal(){document.getElementById('modal').style.display='none'}
+</script>
+</body></html>

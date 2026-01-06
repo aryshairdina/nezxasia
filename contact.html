@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Support</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="container">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">NA</div>
+      <div>
+        <strong>Contact Support</strong>
+        <div class="muted">Submit a ticket or chat with support</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="avatar">A</div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="nav-item" href="help.html">Help Center</a>
+      <a class="nav-item" href="feedback.html">Feedback</a>
+      <a class="nav-item active" href="contact.html">Contact</a>
+    </aside>
+
+    <main class="main">
+
+      <!-- SUPPORT OPTIONS -->
+      <div class="grid2">
+        <div class="card">
+          <h3>Submit Support Ticket</h3>
+          <p class="muted">For detailed issues that require follow-up</p>
+        </div>
+
+        <div class="card">
+          <h3>Live Support Chat</h3>
+          <p class="muted">Quick assistance from support team</p>
+          <div style="height:8px"></div>
+          <button class="btn primary" onclick="location.href='chat-support.html'">
+            Chat with Support
+          </button>
+        </div>
+      </div>
+
+      <div style="height:14px"></div>
+
+      <!-- TICKET FORM -->
+      <div class="card form-grid">
+        <div class="form-row">
+          <label>Issue Title</label>
+          <input class="input">
+        </div>
+
+        <div class="form-row">
+          <label>Priority</label>
+          <select class="input">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+          </select>
+        </div>
+
+        <div class="form-row" style="grid-column:1 / -1">
+          <label>Details</label>
+          <textarea></textarea>
+        </div>
+
+        <div class="form-row">
+          <label>Attach screenshot</label>
+          <input class="input" type="file" accept="image/*">
+        </div>
+
+        <div class="form-row" style="grid-column:1 / -1;display:flex;justify-content:flex-end">
+          <button class="btn primary" onclick="alert('Ticket submitted (UI prototype)')">
+            Submit Ticket
+          </button>
+        </div>
+      </div>
+
+      <div style="height:12px"></div>
+
+      <!-- SUPPORT INFO -->
+      <div class="card">
+        <h4>Support Contacts</h4>
+        <div class="muted">
+          support@nezxasia.com • +60 3-1234 5678
+        </div>
+      </div>
+
+      <div class="footer muted">
+        Contact Support — ticketing & chat UI (Knowledge Application)
+      </div>
+
+    </main>
+  </div>
+</div>
+</body>
+</html>

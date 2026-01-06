@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Community of Practice</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="container">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">NA</div>
+      <div>
+        <strong>Community of Practice</strong>
+        <div class="muted">Collaborative knowledge sharing</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="avatar">A</div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <a class="nav-item" href="directory.html">Expert Directory</a>
+      <a class="nav-item active" href="#">Community</a>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- CoP HEADER -->
+      <div class="card">
+        <h3>Compliance Community of Practice</h3>
+        <p class="muted">
+          Discussion space for sharing compliance knowledge, experiences, and best practices
+        </p>
+      </div>
+
+      <div style="height:14px"></div>
+
+      <!-- DISCUSSION THREADS -->
+      <div class="card">
+        <h4>Recent Discussions</h4>
+
+        <div class="doc-list">
+          <div class="doc">
+            <div class="thumb">Q</div>
+            <div class="meta">
+              <h4>How to handle suspicious transactions?</h4>
+              <div class="meta-sub muted">Started by Hana • 12 replies</div>
+            </div>
+          </div>
+
+          <div class="doc">
+            <div class="thumb">Q</div>
+            <div class="meta">
+              <h4>Latest AML regulatory updates (BNM)</h4>
+              <div class="meta-sub muted">Started by Rizal • 8 replies</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:12px"></div>
+
+      <!-- NEW DISCUSSION -->
+      <div class="card">
+        <h4>Start a New Discussion</h4>
+        <input class="input" placeholder="Discussion title">
+        <div style="height:8px"></div>
+        <textarea class="input" placeholder="Share your question or experience..."></textarea>
+        <div style="height:10px"></div>
+        <button class="btn primary" onclick="alert('UI only: discussion posted')">
+          Post Discussion
+        </button>
+      </div>
+
+      <div class="footer muted">
+        Community of Practice — enables tacit knowledge sharing and collaboration (UI only)
+      </div>
+
+    </main>
+  </div>
+</div>
+</body>
+</html>

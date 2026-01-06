@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NezxAsia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">NA</div>
+        <div>
+          <strong>NezxAsia KM Portal</strong>
+          <div class="muted">Module Lead: Capture, Expertise, Learning & Support</div>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <div class="search">
+          <input placeholder="Search documents, experts, or courses..." />
+        </div>
+        <div class="avatar" title="Arysha">A</div>
+      </div>
+    </header>
+
+    <!-- Layout -->
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <a class="nav-item active" href="index.html">Dashboard</a>
+        <a class="nav-item" href="submit.html">Submit Document</a>
+        <a class="nav-item" href="directory.html">Expert Directory</a>
+        <a class="nav-item" href="training.html">Training & Onboarding</a>
+        <a class="nav-item" href="help.html">Help Center</a>
+        <a class="nav-item" href="faq.html">FAQ</a>
+        <a class="nav-item" href="feedback.html">Feedback</a>
+        <a class="nav-item" href="contact.html">Contact Support</a>
+      </aside>
+
+      <!-- Main -->
+      <main class="main">
+        <div class="page-head">
+          <div>
+            <h2>Dashboard</h2>
+            <div class="muted">
+              Overview of Capture, Expertise, Learning & Support activities
+            </div>
+          </div>
+        </div>
+
+        <!-- Top cards -->
+        <div class="grid3">
+          <div class="card">
+            <h3>Pending Approvals</h3>
+            <p class="muted">Documents awaiting review / publish</p>
+            <div style="height:10px"></div>
+
+            <div class="doc">
+              <div class="thumb">SOP</div>
+              <div class="meta">
+                <h4>Customer Identification SOP</h4>
+                <div class="meta-sub muted">
+                  Submitted: 2025-11-29 • Owner: Hana
+                </div>
+              </div>
+            </div>
+
+            <div style="height:10px"></div>
+            <div class="small muted">
+              Total pending: <strong>3</strong>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Training Snapshot</h3>
+            <p class="muted">Active modules & completion</p>
+            <div style="height:10px"></div>
+
+            <div>
+              <div style="display:flex;justify-content:space-between">
+                <div>AML Fundamentals</div>
+                <div class="small muted">65%</div>
+              </div>
+              <div class="progress" style="margin-top:8px">
+                <i style="width:65%"></i>
+              </div>
+            </div>
+
+            <div style="height:10px"></div>
+            <div class="small muted">
+              Enrollments this month: <strong>48</strong>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Expert Activity</h3>
+            <p class="muted">Top contributors last 30 days</p>
+            <div style="height:10px"></div>
+
+            <div class="expert" style="margin-bottom:8px">
+              <div class="avatar-lg" style="width:48px;height:48px;font-size:14px">
+                HA
+              </div>
+              <div>
+                <div><strong>Hana Ahmed</strong></div>
+                <div class="small muted">Contributions: 3</div>
+              </div>
+            </div>
+
+            <div class="small muted">
+              Experts online: <strong>5</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repository + Quick actions -->
+        <div style="height:12px"></div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <h3 style="margin:0">Knowledge Repository — Recent</h3>
+              <div class="muted">
+                Latest uploaded and most-referenced items
+              </div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="btn ghost" onclick="location.href='submit.html'">
+                New Document
+              </button>
+              <button class="btn primary" onclick="alert('Open Repository (UI)')">
+                Open Repository
+              </button>
+            </div>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="doc-list">
+            <a class="doc" href="#">
+              <div class="thumb">POL</div>
+              <div class="meta">
+                <h4>AML Policy — Malaysia</h4>
+                <div class="meta-sub muted">
+                  Compliance • v2 • Updated: 2025-11-10
+                </div>
+              </div>
+            </a>
+
+            <a class="doc" href="#">
+              <div class="thumb">TRN</div>
+              <div class="meta">
+                <h4>Onboarding Guide — HR</h4>
+                <div class="meta-sub muted">
+                  Training • 10 modules
+                </div>
+              </div>
+            </a>
+
+            <a class="doc" href="#">
+              <div class="thumb">SOP</div>
+              <div class="meta">
+                <h4>Suspicious Transaction SOP</h4>
+                <div class="meta-sub muted">
+                  Compliance • v1.1 • Owner: Hana
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 🔹 KM STATISTICS (GRAPH STYLE) -->
+        <div style="height:12px"></div>
+        <div class="card">
+          <h3>Knowledge Management Statistics</h3>
+          <div class="muted">Visual overview for management decision-making</div>
+
+          <div style="height:14px"></div>
+
+          <div class="grid2">
+            <!-- Chart 1 -->
+            <div class="card">
+              <h4>Documents by Category</h4>
+
+              <div class="small muted">SOPs — 42%</div>
+              <div class="progress"><i style="width:42%"></i></div>
+
+              <div class="small muted" style="margin-top:8px">Policies — 33%</div>
+              <div class="progress"><i style="width:33%"></i></div>
+
+              <div class="small muted" style="margin-top:8px">Training — 25%</div>
+              <div class="progress"><i style="width:25%"></i></div>
+            </div>
+
+            <!-- Chart 2 -->
+            <div class="card">
+              <h4>Overall Knowledge Usage</h4>
+
+              <div class="small muted">Repository usage (last 30 days)</div>
+              <div class="progress" style="margin-top:8px">
+                <i style="width:68%"></i>
+              </div>
+
+              <div class="small muted" style="margin-top:6px">
+                68% active usage across departments
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar-like row -->
+        <div style="height:12px"></div>
+        <div class="grid2">
+          <div class="card">
+            <h3>Quick Expert Contacts</h3>
+            <div style="height:8px"></div>
+
+            <div class="expert" style="margin-bottom:8px">
+              <div class="avatar-lg">HA</div>
+              <div>
+                <h4 style="margin:0">Hana Ahmed</h4>
+                <div class="small muted">Head of Compliance</div>
+              </div>
+              <div style="margin-left:auto">
+                <button class="btn ghost" onclick="location.href='profile.html'">
+                  View
+                </button>
+              </div>
+            </div>
+
+            <div class="expert">
+              <div class="avatar-lg">RK</div>
+              <div>
+                <h4 style="margin:0">Rizal K</h4>
+                <div class="small muted">IT — Security</div>
+              </div>
+              <div style="margin-left:auto">
+                <button class="btn ghost">View</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Learning — Quick Access</h3>
+            <div style="height:8px"></div>
+
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;justify-content:space-between">
+                <div>AML Fundamentals</div>
+                <div class="small muted">65%</div>
+              </div>
+
+              <div style="display:flex;justify-content:space-between">
+                <div>Onboarding Module</div>
+                <div class="small muted">40%</div>
+              </div>
+
+              <div style="height:10px"></div>
+              <div style="display:flex;gap:8px">
+                <button class="btn primary" onclick="location.href='training.html'">
+                  Go to Training
+                </button>
+                <button class="btn ghost" onclick="location.href='onboarding.html'">
+                  Onboarding Guide
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+        <div class="card">
+          <h3>Support & Feedback</h3>
+          <div class="muted">Recent tickets & feedback</div>
+
+          <div style="height:10px"></div>
+
+          <div class="doc" style="align-items:flex-start">
+            <div style="width:44px;height:44px;border-radius:8px;background:#f6f8fb;display:flex;align-items:center;justify-content:center">
+              T1
+            </div>
+            <div style="flex:1">
+              <h4 style="margin:0">
+                Access request — Suspicious Transaction SOP
+              </h4>
+              <div class="meta-sub muted">
+                Submitted: 2025-11-30 • Status: Pending
+              </div>
+            </div>
+            <div style="margin-left:auto" class="small muted">
+              Ticket #452
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

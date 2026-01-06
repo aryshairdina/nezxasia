@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Expert Directory</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="container">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">NA</div>
+      <div>
+        <strong>Expert Directory</strong>
+        <div class="muted">Capture & Expertise</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="search">
+        <input placeholder="Search experts, skills..." />
+      </div>
+      <div class="avatar">A</div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="nav-item" href="index.html">Dashboard</a>
+      <a class="nav-item active" href="directory.html">Directory</a>
+      <a class="nav-item" href="submit.html">Submit</a>
+    </aside>
+
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h2>Expert Directory</h2>
+          <div class="muted">Find experts by skill, department or location</div>
+        </div>
+      </div>
+
+      <!-- FILTER -->
+      <div class="card">
+        <div style="display:flex;gap:12px;align-items:center">
+          <input class="input" placeholder="Filter by skill / department..." style="flex:1">
+          <select class="input" style="width:160px">
+            <option>All</option>
+            <option>Compliance</option>
+            <option>IT</option>
+            <option>Customer Ops</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="height:14px"></div>
+
+      <!-- EXPERT LIST -->
+      <div class="expert-grid">
+        <a class="expert" href="profile.html">
+          <div class="avatar-lg">HA</div>
+          <div>
+            <h4 style="margin:0">Hana Ahmed</h4>
+            <div class="muted">Head of Compliance — AML, Risk</div>
+            <div style="height:8px"></div>
+            <div class="small muted">Contributions: 8 • Rating: ★★★★☆</div>
+          </div>
+        </a>
+
+        <a class="expert" href="#">
+          <div class="avatar-lg">RK</div>
+          <div>
+            <h4 style="margin:0">Rizal K</h4>
+            <div class="muted">IT — Security, Cloud</div>
+            <div style="height:8px"></div>
+            <div class="small muted">Contributions: 5</div>
+          </div>
+        </a>
+
+        <a class="expert" href="#">
+          <div class="avatar-lg">SA</div>
+          <div>
+            <h4 style="margin:0">Siti A</h4>
+            <div class="muted">Customer Ops — Service Quality</div>
+            <div style="height:8px"></div>
+            <div class="small muted">Contributions: 3</div>
+          </div>
+        </a>
+      </div>
+
+      <div style="height:20px"></div>
+
+      <!-- 🔹 COMMUNITY OF PRACTICE SECTION -->
+      <div class="card">
+        <h3>Community of Practice (CoP)</h3>
+        <p class="muted">
+          Knowledge-sharing groups where staff and experts discuss best practices and solve problems together
+        </p>
+
+        <div style="height:12px"></div>
+
+        <div class="grid2">
+          <div class="card">
+            <h4>Compliance CoP</h4>
+            <p class="muted">AML policies, regulatory updates, audits</p>
+            <div class="small muted">Members: 24 • Topics: 56</div>
+            <div style="height:8px"></div>
+            <button class="btn ghost" onclick="location.href='cop.html'">
+              View Community
+            </button>
+          </div>
+
+          <div class="card">
+            <h4>IT & Security CoP</h4>
+            <p class="muted">System security, cloud infrastructure</p>
+            <div class="small muted">Members: 18 • Topics: 34</div>
+            <div style="height:8px"></div>
+            <button class="btn ghost" onclick="location.href='cop.html'">
+              View Community
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer muted">
+        Experts and CoP support tacit knowledge sharing across departments
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>
