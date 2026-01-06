@@ -13,20 +13,74 @@
       <a class="nav-item active" href="faq.html">FAQ</a></aside>
       <a class="nav-item" href="feedback.html">Feedback</a>
     <main class="main">
-      <div class="card">
-        <h3>Search FAQs</h3>
-        <input class="input" placeholder="Type a question...">
+      <!-- SUPPORT OPTIONS -->
+      <div class="grid2">
+        <div class="card">
+          <h3>Submit Support Ticket</h3>
+          <p class="muted">For detailed issues that require follow-up</p>
+        </div>
+
+        <div class="card">
+          <h3>Live Support Chat</h3>
+          <p class="muted">Quick assistance from support team</p>
+          <div style="height:8px"></div>
+          <button class="btn primary" onclick="location.href='chat-support.html'">
+            Chat with Support
+          </button>
+        </div>
+      </div>
+
+      <div style="height:14px"></div>
+
+      <!-- TICKET FORM -->
+      <div class="card form-grid">
+        <div class="form-row">
+          <label>Issue Title</label>
+          <input class="input">
+        </div>
+
+        <div class="form-row">
+          <label>Priority</label>
+          <select class="input">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+          </select>
+        </div>
+
+        <div class="form-row" style="grid-column:1 / -1">
+          <label>Details</label>
+          <textarea></textarea>
+        </div>
+
+        <div class="form-row">
+          <label>Attach screenshot</label>
+          <input class="input" type="file" accept="image/*">
+        </div>
+
+        <div class="form-row" style="grid-column:1 / -1;display:flex;justify-content:flex-end">
+          <button class="btn primary" onclick="alert('Ticket submitted (UI prototype)')">
+            Submit Ticket
+          </button>
+        </div>
       </div>
 
       <div style="height:12px"></div>
 
+      <!-- SUPPORT INFO -->
       <div class="card">
-        <details class="faq-item"><summary><strong>How to upload a new SOP?</strong></summary><p class="muted">Use Submit page, fill metadata, attach file, submit. Approval flow is simulated in the prototype.</p></details>
-        <details class="faq-item"><summary><strong>How to find an expert?</strong></summary><p class="muted">Use Expert Directory and open profile to message or schedule.</p></details>
+        <h4>Support Contacts</h4>
+        <div class="muted">
+          support@nezxasia.com • +60 3-1234 5678
+        </div>
       </div>
 
-      <div class="footer muted">FAQ — update as new questions appear</div>
+      <div class="footer muted">
+        Contact Support — ticketing & chat UI (Knowledge Application)
+      </div>
+
     </main>
   </div>
 </div>
-</body></html>
+</body>
+</html>
