@@ -47,7 +47,7 @@
 
       <div style="height:14px"></div>
 
-      <!-- CHAT AREA -->
+      <!-- CHAT MESSAGES -->
       <div class="card" style="height:340px;overflow-y:auto">
         <div class="col" style="gap:12px">
 
@@ -61,4 +61,44 @@
           </div>
 
           <!-- USER MESSAGE -->
-          <div c
+          <div class="card" style="max-width:70%;align-self:flex-end;background:#eaf2ff">
+            <strong>You</strong>
+            <p class="muted">
+              I am unable to access a compliance document.
+            </p>
+            <div class="small muted">11:06 AM</div>
+          </div>
+
+          <!-- SUPPORT REPLY -->
+          <div class="card" style="max-width:70%;align-self:flex-start;background:#f5f7fa">
+            <strong>Support</strong>
+            <p class="muted">
+              Thank you for informing us. We will check your access permissions.
+            </p>
+            <div class="small muted">11:07 AM</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="height:12px"></div>
+
+      <!-- CHAT INPUT -->
+      <div class="card">
+        <div class="row" style="gap:10px">
+          <input class="input w-100" placeholder="Type your message here..." />
+          <button class="btn primary" onclick="alert('UI only: message sent')">
+            Send
+          </button>
+        </div>
+      </div>
+
+      <div class="footer muted">
+        Support Chat — enables fast issue resolution and knowledge application (UI only)
+      </div>
+
+    </main>
+  </div>
+</div>
+</body>
+</html>
