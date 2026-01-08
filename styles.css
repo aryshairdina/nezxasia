@@ -40,6 +40,8 @@ body{
 .sidebar{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow);border:1px solid rgba(10,20,30,0.04)}
 .nav-item{display:block;padding:10px;border-radius:8px;color:#12313c;text-decoration:none;font-weight:700;margin-bottom:6px}
 .nav-item.active{background:#f2f8ff;border-left:4px solid var(--primary);padding-left:12px}
+.logout { margin-top: auto; color: #d9534f; }
+.logout:hover { background: #fff5f5; color: #d9534f; }
 
 /* Main */
 .main{min-height:600px}
