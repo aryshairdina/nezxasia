@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NezxAsia</title>
+  <title>NezxAsia KM Portal</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <!-- Topbar -->
     <header class="topbar">
       <div class="brand">
         <div class="logo">NA</div>
@@ -26,63 +25,68 @@
       </div>
     </header>
 
-    <!-- Layout -->
     <div class="layout">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-         <a class="nav-item active" href="index.html">Dashboard</a>
-        <a class="nav-item" href="submit.html">Submit Document</a>
-        <a class="nav-item" href="directory.html">Expert Directory</a>
-        <a class="nav-item" href="training.html">Training</a>
-        <a class="nav-item" href="onboarding.html">Onboarding</a>
-        <a class="nav-item" href="help.html">Help Center</a>
-        <a class="nav-item" href="faq.html">FAQ</a>
-        <a class="nav-item" href="feedback.html">Feedback</a>
-        <a class="nav-item" href="contact.html">Contact Support</a>
-      </aside>
+      <div id="sidebar-container"></div>
+      <script>
+        fetch('sidebar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('sidebar-container').innerHTML = data;
 
-      <!-- Main -->
+            const currentPath = window.location.pathname.split("/").pop(); 
+            const navLinks = document.querySelectorAll('.nav-item');
+
+            navLinks.forEach(link => {
+              if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+              }
+            });
+          })
+          .catch(error => console.error('Error loading sidebar:', error));
+      </script>
+
       <main class="main">
         <div class="page-head">
           <div>
-            <h2>Dashboard</h2>
+            <h2>KM Dashboard</h2>
             <div class="muted">
-              Overview of Capture, Expertise, Learning & Support activities
+              Overview of Knowledge Value, SECI Processes & Compliance
             </div>
           </div>
         </div>
 
-        <!-- Top cards -->
         <div class="grid3">
+          
           <div class="card">
-            <h3>Pending Approvals</h3>
-            <p class="muted">Documents awaiting review / publish</p>
+            <h3>Governance & Review</h3>
+            <p class="muted">Document Health Status</p>
             <div style="height:10px"></div>
 
-            <div class="doc">
-              <div class="thumb">SOP</div>
-              <div class="meta">
-                <h4>Customer Identification SOP</h4>
-                <div class="meta-sub muted">
-                  Submitted: 2025-11-29 • Owner: Hana
+            <div style="display:flex; justify-content:space-between; align-items:center">
+                <div>
+                    <span style="font-size:24px; font-weight:bold">92%</span>
+                    <div class="small muted">Freshness Score</div>
                 </div>
-              </div>
+                <div style="text-align:right">
+                    <span style="font-size:24px; font-weight:bold; color:#d9534f">3</span>
+                    <div class="small muted">Pending Approval</div>
+                </div>
             </div>
-
+            
             <div style="height:10px"></div>
-            <div class="small muted">
-              Total pending: <strong>3</strong>
+            <div class="small" style="color:#f0ad4e; font-weight:500">
+                 ⚠ 2 Docs expiring in &lt; 30 days
             </div>
           </div>
 
           <div class="card">
-            <h3>Training Snapshot</h3>
-            <p class="muted">Active modules & completion</p>
+            <h3>Training Impact</h3>
+            <p class="muted">Learning applied to performance</p>
             <div style="height:10px"></div>
 
             <div>
               <div style="display:flex;justify-content:space-between">
-                <div>AML Fundamentals</div>
+                <div>AML Module Completion</div>
                 <div class="small muted">65%</div>
               </div>
               <div class="progress" style="margin-top:8px">
@@ -90,34 +94,103 @@
               </div>
             </div>
 
-            <div style="height:10px"></div>
-            <div class="small muted">
-              Enrollments this month: <strong>48</strong>
+            <div style="height:12px"></div>
+            <div style="background: #e8f5e9; padding: 8px; border-radius: 4px; color: #2e7d32; font-size: 13px;">
+                <strong>📉 Risk Reduction:</strong> SOP-related error tickets dropped by <strong>20%</strong>.
             </div>
           </div>
 
           <div class="card">
-            <h3>Expert Activity</h3>
-            <p class="muted">Top contributors last 30 days</p>
+            <h3>High-Value Assets</h3>
+            <p class="muted">Most utilized knowledge this week</p>
             <div style="height:10px"></div>
 
-            <div class="expert" style="margin-bottom:8px">
-              <div class="avatar-lg" style="width:48px;height:48px;font-size:14px">
-                HA
-              </div>
-              <div>
-                <div><strong>Hana Ahmed</strong></div>
-                <div class="small muted">Contributions: 3</div>
-              </div>
+            <div class="doc" style="padding: 4px 0;">
+                <div class="thumb" style="width:24px; height:24px; font-size:10px">SOP</div>
+                <div class="meta">
+                    <div style="font-weight:600; font-size:14px">Suspicious Trans. SOP</div>
+                    <div class="small muted">42 Views • Used in Audit</div>
+                </div>
             </div>
-
-            <div class="small muted">
-              Experts online: <strong>5</strong>
+             <div class="doc" style="padding: 4px 0;">
+                <div class="thumb" style="width:24px; height:24px; font-size:10px">POL</div>
+                <div class="meta">
+                    <div style="font-weight:600; font-size:14px">AML Policy (MY)</div>
+                    <div class="small muted">35 Views</div>
+                </div>
             </div>
           </div>
         </div>
 
-        <!-- Repository + Quick actions -->
+        <div style="height:12px"></div>
+        <div class="card">
+            <h3 style="margin-bottom: 4px;">Strategic KM Overview</h3>
+            <div class="muted">Tracking the SECI Spiral and Knowledge Lifecycle</div>
+            
+            <div style="height:16px"></div>
+
+            <div class="grid2">
+                <div style="border-right: 1px solid #eee; padding-right: 16px;">
+                    <h4 style="margin:0 0 12px 0; color:#333">SECI Process Activity (30 Days)</h4>
+                    
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px">
+                        <div style="background:#f9fafc; padding:10px; border-radius:6px">
+                            <div class="small muted" style="text-transform:uppercase; letter-spacing:0.5px; font-size:11px">Socialization</div>
+                            <div style="font-size:20px; font-weight:bold; color:#0056b3">18</div>
+                            <div class="small">Forum Discussions</div>
+                        </div>
+                        <div style="background:#f9fafc; padding:10px; border-radius:6px">
+                            <div class="small muted" style="text-transform:uppercase; letter-spacing:0.5px; font-size:11px">Externalization</div>
+                            <div style="font-size:20px; font-weight:bold; color:#28a745">10</div>
+                            <div class="small">Docs Captured</div>
+                        </div>
+                        <div style="background:#f9fafc; padding:10px; border-radius:6px">
+                            <div class="small muted" style="text-transform:uppercase; letter-spacing:0.5px; font-size:11px">Combination</div>
+                            <div style="font-size:20px; font-weight:bold; color:#fd7e14">6</div>
+                            <div class="small">Merges/Updates</div>
+                        </div>
+                        <div style="background:#f9fafc; padding:10px; border-radius:6px">
+                            <div class="small muted" style="text-transform:uppercase; letter-spacing:0.5px; font-size:11px">Internalization</div>
+                            <div style="font-size:20px; font-weight:bold; color:#6f42c1">22</div>
+                            <div class="small">Applied (Training)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding-left: 16px;">
+                     <h4 style="margin:0 0 12px 0; color:#333">Knowledge Lifecycle Funnel</h4>
+                     <p class="small muted">Conversion from creation to application</p>
+
+                     <div style="display:flex; flex-direction:column; gap:8px;">
+                        <div style="display:flex; align-items:center;">
+                            <div style="width:80px; font-size:13px; font-weight:600">Created</div>
+                            <div style="flex:1; background:#eee; height:20px; border-radius:4px; overflow:hidden">
+                                <div style="width:100%; background:#b0bec5; height:100%; text-align:right; padding-right:5px; color:white; font-size:12px; line-height:20px">12</div>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center;">
+                            <div style="width:80px; font-size:13px; font-weight:600">Approved</div>
+                            <div style="flex:1; background:#eee; height:20px; border-radius:4px; overflow:hidden">
+                                <div style="width:75%; background:#42a5f5; height:100%; text-align:right; padding-right:5px; color:white; font-size:12px; line-height:20px">9</div>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center;">
+                            <div style="width:80px; font-size:13px; font-weight:600">Shared</div>
+                            <div style="flex:1; background:#eee; height:20px; border-radius:4px; overflow:hidden">
+                                <div style="width:58%; background:#66bb6a; height:100%; text-align:right; padding-right:5px; color:white; font-size:12px; line-height:20px">7</div>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center;">
+                            <div style="width:80px; font-size:13px; font-weight:600">Applied</div>
+                            <div style="flex:1; background:#eee; height:20px; border-radius:4px; overflow:hidden">
+                                <div style="width:41%; background:#ab47bc; height:100%; text-align:right; padding-right:5px; color:white; font-size:12px; line-height:20px">5</div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
         <div style="height:12px"></div>
         <div class="card">
           <div style="display:flex;justify-content:space-between;align-items:center">
@@ -172,70 +245,38 @@
           </div>
         </div>
 
-        <!-- 🔹 KM STATISTICS (GRAPH STYLE) -->
-        <div style="height:12px"></div>
-        <div class="card">
-          <h3>Knowledge Management Statistics</h3>
-          <div class="muted">Visual overview for management decision-making</div>
-
-          <div style="height:14px"></div>
-
-          <div class="grid2">
-            <!-- Chart 1 -->
-            <div class="card">
-              <h4>Documents by Category</h4>
-
-              <div class="small muted">SOPs — 42%</div>
-              <div class="progress"><i style="width:42%"></i></div>
-
-              <div class="small muted" style="margin-top:8px">Policies — 33%</div>
-              <div class="progress"><i style="width:33%"></i></div>
-
-              <div class="small muted" style="margin-top:8px">Training — 25%</div>
-              <div class="progress"><i style="width:25%"></i></div>
-            </div>
-
-            <!-- Chart 2 -->
-            <div class="card">
-              <h4>Overall Knowledge Usage</h4>
-
-              <div class="small muted">Repository usage (last 30 days)</div>
-              <div class="progress" style="margin-top:8px">
-                <i style="width:68%"></i>
-              </div>
-
-              <div class="small muted" style="margin-top:6px">
-                68% active usage across departments
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sidebar-like row -->
         <div style="height:12px"></div>
         <div class="grid2">
+          
           <div class="card">
-            <h3>Quick Expert Contacts</h3>
+            <h3>Expert Contributions</h3>
+            <p class="muted">Tacit & Explicit Knowledge Leaders</p>
             <div style="height:8px"></div>
 
             <div class="expert" style="margin-bottom:8px">
               <div class="avatar-lg">HA</div>
-              <div>
+              <div style="flex:1; margin-left:10px;">
                 <h4 style="margin:0">Hana Ahmed</h4>
-                <div class="small muted">Head of Compliance</div>
+                <div class="small muted">Compliance Lead</div>
+                <div style="margin-top:4px; display:flex; gap:5px">
+                    <span style="font-size:11px; background:#e3f2fd; color:#1565c0; padding:2px 6px; border-radius:4px">3 SOPs</span>
+                    <span style="font-size:11px; background:#fff3e0; color:#ef6c00; padding:2px 6px; border-radius:4px">5 Answers</span>
+                </div>
               </div>
               <div style="margin-left:auto">
-                <button class="btn ghost" onclick="location.href='profile.html'">
-                  View
-                </button>
+                <button class="btn ghost">View</button>
               </div>
             </div>
 
             <div class="expert">
               <div class="avatar-lg">RK</div>
-              <div>
+              <div style="flex:1; margin-left:10px;">
                 <h4 style="margin:0">Rizal K</h4>
                 <div class="small muted">IT — Security</div>
+                 <div style="margin-top:4px; display:flex; gap:5px">
+                    <span style="font-size:11px; background:#e3f2fd; color:#1565c0; padding:2px 6px; border-radius:4px">2 Guides</span>
+                    <span style="font-size:11px; background:#fff3e0; color:#ef6c00; padding:2px 6px; border-radius:4px">8 Replies</span>
+                </div>
               </div>
               <div style="margin-left:auto">
                 <button class="btn ghost">View</button>
@@ -244,55 +285,27 @@
           </div>
 
           <div class="card">
-            <h3>Learning — Quick Access</h3>
-            <div style="height:8px"></div>
-
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="display:flex;justify-content:space-between">
-                <div>AML Fundamentals</div>
-                <div class="small muted">65%</div>
-              </div>
-
-              <div style="display:flex;justify-content:space-between">
-                <div>Onboarding Module</div>
-                <div class="small muted">40%</div>
-              </div>
-
-              <div style="height:10px"></div>
-              <div style="display:flex;gap:8px">
-                <button class="btn primary" onclick="location.href='training.html'">
-                  Go to Training
-                </button>
-                <button class="btn ghost" onclick="location.href='onboarding.html'">
-                  Onboarding Guide
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="height:12px"></div>
-        <div class="card">
-          <h3>Support & Feedback</h3>
-          <div class="muted">Recent tickets & feedback</div>
-
-          <div style="height:10px"></div>
-
-          <div class="doc" style="align-items:flex-start">
-            <div style="width:44px;height:44px;border-radius:8px;background:#f6f8fb;display:flex;align-items:center;justify-content:center">
-              T1
-            </div>
-            <div style="flex:1">
-              <h4 style="margin:0">
-                Access request — Suspicious Transaction SOP
-              </h4>
-              <div class="meta-sub muted">
-                Submitted: 2025-11-30 • Status: Pending
-              </div>
-            </div>
-            <div style="margin-left:auto" class="small muted">
-              Ticket #452
-            </div>
+             <h3>Support & Feedback</h3>
+             <div class="muted">Recent tickets & feedback</div>
+ 
+             <div style="height:10px"></div>
+ 
+             <div class="doc" style="align-items:flex-start">
+               <div style="width:44px;height:44px;border-radius:8px;background:#f6f8fb;display:flex;align-items:center;justify-content:center">
+                 T1
+               </div>
+               <div style="flex:1">
+                 <h4 style="margin:0">
+                   Access request — Suspicious Transaction SOP
+                 </h4>
+                 <div class="meta-sub muted">
+                   Submitted: 2025-11-30 • Status: Pending
+                 </div>
+               </div>
+               <div style="margin-left:auto" class="small muted">
+                 Ticket #452
+               </div>
+             </div>
           </div>
         </div>
       </main>

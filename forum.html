@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - NezxAsia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Forum Specific Styles */
+        .forum-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #f0f4f8;
+            transition: background 0.2s;
+        }
+        .forum-card:hover {
+            background: #f8fbff;
+        }
+        .forum-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 5px;
+        }
+        .stat-box {
+            text-align: center;
+            min-width: 60px;
+        }
+        .stat-num {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--primary);
+        }
+        .tag-category {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">NA</div>
+        <div><strong>NezxAsia</strong><div class="muted">Knowledge Capture</div></div>
+      </div>
+      <div class="top-actions">
+        <div class="search"><input placeholder="Search documents, experts..." /></div>
+        <div class="avatar">A</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      
+      <div id="sidebar-container"></div>
+      
+      <main class="main">
+        
+        <div class="page-head">
+            <div>
+                <h2 style="margin:0;">Community Forum</h2>
+                <div class="muted">Discuss topics, share knowledge, and ask experts.</div>
+            </div>
+            <div class="top-actions">
+                 <a href="forum-post.html" class="btn primary">Start New Discussion</a>
+            </div>
+        </div>
+
+        <div style="height:20px"></div>
+
+        <div class="card" style="padding: 15px; margin-bottom: 20px; display: flex; gap: 10px;">
+            <input type="text" class="input" placeholder="Search topics..." style="flex: 1;">
+            <select class="input" style="width: 150px;"><option>All Categories</option><option>Compliance</option><option>IT Support</option><option>HR</option></select>
+            <button class="btn ghost">Filter</button>
+        </div>
+
+        <div class="card" style="padding: 0; overflow: hidden;">
+            
+            <div class="forum-card">
+                <div style="flex: 1;">
+                    <span class="tag-category">Compliance</span>
+                    <h3 style="margin: 0 0 5px 0;"><a href="forum-details.html" style="text-decoration: none; color: #0f2430;">Clarification on new AML Guidelines 2026</a></h3>
+                    <div class="forum-meta">
+                        <span>Started by <strong>Rizal K.</strong></span>
+                        <span>• 2 hours ago</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <div class="stat-box"><div class="stat-num">12</div><div class="muted" style="font-size:11px;">Replies</div></div>
+                    <div class="stat-box"><div class="stat-num">340</div><div class="muted" style="font-size:11px;">Views</div></div>
+                </div>
+            </div>
+
+            <div class="forum-card">
+                <div style="flex: 1;">
+                    <span class="tag-category" style="background:#fff3e0; color:#e65100;">IT Support</span>
+                    <h3 style="margin: 0 0 5px 0;"><a href="forum-details.html" style="text-decoration: none; color: #0f2430;">VPN Connection Issues from Home</a></h3>
+                    <div class="forum-meta">
+                        <span>Started by <strong>Sarah L.</strong></span>
+                        <span>• Yesterday</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <div class="stat-box"><div class="stat-num">5</div><div class="muted" style="font-size:11px;">Replies</div></div>
+                    <div class="stat-box"><div class="stat-num">120</div><div class="muted" style="font-size:11px;">Views</div></div>
+                </div>
+            </div>
+
+             <div class="forum-card" style="border-bottom: none;">
+                <div style="flex: 1;">
+                    <span class="tag-category" style="background:#e8f5e9; color:#2e7d32;">General</span>
+                    <h3 style="margin: 0 0 5px 0;"><a href="forum-details.html" style="text-decoration: none; color: #0f2430;">Suggestions for the upcoming Town Hall?</a></h3>
+                    <div class="forum-meta">
+                        <span>Started by <strong>Admin</strong></span>
+                        <span>• 3 days ago</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <div class="stat-box"><div class="stat-num">24</div><div class="muted" style="font-size:11px;">Replies</div></div>
+                    <div class="stat-box"><div class="stat-num">890</div><div class="muted" style="font-size:11px;">Views</div></div>
+                </div>
+            </div>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <script>
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+        
+        // Highlight active link
+        const currentPath = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll('.nav-item');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+      })
+      .catch(error => console.error('Error loading sidebar:', error));
+  </script>
+</body>
+</html>

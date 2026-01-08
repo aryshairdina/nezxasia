@@ -14,17 +14,26 @@
     </header>
 
     <div class="layout">
-      <aside class="sidebar">
-        <a class="nav-item" href="index.html">Dashboard</a>
-        <a class="nav-item active" href="submit.html">Submit Document</a>
-        <a class="nav-item" href="directory.html">Expert Directory</a>
-        <a class="nav-item" href="training.html">Training</a>
-        <a class="nav-item" href="onboarding.html">Onboarding</a>
-        <a class="nav-item" href="help.html">Help Center</a>
-        <a class="nav-item" href="faq.html">FAQ</a>
-        <a class="nav-item" href="feedback.html">Feedback</a>
-        <a class="nav-item" href="contact.html">Contact Support</a>
-      </aside>
+      <div id="sidebar-container"></div>
+     <script>
+  fetch('sidebar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('sidebar-container').innerHTML = data;
+
+
+      const currentPath = window.location.pathname.split("/").pop(); // Get filename (e.g. onboarding.html)
+      const navLinks = document.querySelectorAll('.nav-item');
+
+      navLinks.forEach(link => {
+
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    })
+    .catch(error => console.error('Error loading sidebar:', error));
+</script>
 
       <main class="main">
         <div class="page-head">

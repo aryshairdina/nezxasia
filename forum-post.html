@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post New Topic - NezxAsia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">NA</div>
+        <div><strong>NezxAsia</strong><div class="muted">Knowledge Capture</div></div>
+      </div>
+      <div class="top-actions">
+        <div class="search"><input placeholder="Search..." /></div>
+        <div class="avatar">A</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <div id="sidebar-container"></div>
+      
+      <main class="main">
+        
+        <div class="page-head">
+            <div>
+                <h2 style="margin:0;">Start New Discussion</h2>
+                <div class="muted">Create a new thread in the community forum.</div>
+            </div>
+        </div>
+
+        <div style="height:20px"></div>
+
+        <div class="card" style="max-width: 800px;">
+            <form action="forum.html">
+                
+                <div class="form-row">
+                    <label style="text-align: left; width: 100%;">Topic Title</label>
+                    <input type="text" class="input" placeholder="e.g., Question about Holiday Leave Policy" required>
+                </div>
+
+                <div class="form-row">
+                    <label style="text-align: left; width: 100%;">Category</label>
+                    <select class="input">
+                        <option value="" disabled selected>Select a category...</option>
+                        <option>Compliance</option>
+                        <option>IT Support</option>
+                        <option>Human Resources</option>
+                        <option>General Discussion</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label style="text-align: left; width: 100%;">Content</label>
+                    <textarea class="input" style="height: 200px;" placeholder="Describe your question or topic in detail..." required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label style="text-align: left; width: 100%;">Tags (Optional)</label>
+                    <input type="text" class="input" placeholder="e.g., #leave, #policy">
+                </div>
+
+                <div style="margin-top: 20px; display: flex; gap: 10px;">
+                    <button type="submit" class="btn primary">Post Discussion</button>
+                    <a href="forum.html" class="btn ghost" style="text-decoration:none;">Cancel</a>
+                </div>
+
+            </form>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+   <script>
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+        
+        // Highlight active link
+        const currentPath = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll('.nav-item');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+      })
+      .catch(error => console.error('Error loading sidebar:', error));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Details - NezxAsia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .post-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .post-author {
+            width: 100px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: #eef6fb;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin: 0 auto 10px auto;
+        }
+        .post-content {
+            flex: 1;
+        }
+        .post-date {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+  <div class="container">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">NA</div>
+        <div><strong>NezxAsia</strong><div class="muted">Knowledge Capture</div></div>
+      </div>
+      <div class="top-actions">
+        <div class="search"><input placeholder="Search..." /></div>
+        <div class="avatar">A</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <div id="sidebar-container"></div>
+      
+      <main class="main">
+        
+        <div class="page-head">
+            <div>
+                <a href="forum.html" style="font-size:13px; color:var(--muted); text-decoration:none;">← Back to Forum</a>
+                <h2 style="margin-top:8px;">Clarification on new AML Guidelines 2026</h2>
+                <span class="badge">Compliance</span>
+            </div>
+            <div class="top-actions">
+                 <button class="btn ghost">Subscribe</button>
+            </div>
+        </div>
+
+        <div style="height:20px"></div>
+
+        <div class="card" style="padding: 0;">
+            
+            <div class="post-container" style="background: #fbfdff;">
+                <div class="post-author">
+                    <div class="author-avatar">R</div>
+                    <div style="font-weight:700; font-size:14px;">Rizal K.</div>
+                    <div class="muted" style="font-size:11px;">Manager</div>
+                </div>
+                <div class="post-content">
+                    <span class="post-date">Posted on 12 Jan 2026 at 10:30 AM</span>
+                    <p style="margin-top:0; line-height: 1.6;">
+                        Hi everyone, regarding the new Section 4.2 in the updated AML Policy distributed yesterday. 
+                        Does the "Immediate Freezing" requirement apply to accounts flagged by the automated system, or only after manual review?
+                        <br><br>
+                        The wording is slightly ambiguous.
+                    </p>
+                </div>
+            </div>
+
+            <div class="post-container">
+                <div class="post-author">
+                    <div class="author-avatar" style="background: #e0f2f1; color: #00695c;">H</div>
+                    <div style="font-weight:700; font-size:14px;">Hana A.</div>
+                    <div class="muted" style="font-size:11px;">Admin</div>
+                </div>
+                <div class="post-content">
+                    <span class="post-date">Posted on 12 Jan 2026 at 11:15 AM</span>
+                    <p style="margin-top:0; line-height: 1.6;">
+                        Hi Rizal, good question. It applies <strong>only after manual review</strong> is completed by the Compliance Officer. 
+                        The system flags it, you review it, and IF confirmed suspicious, then you freeze it immediately.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="height:20px"></div>
+
+        <div class="card">
+            <h3 style="margin-top:0;">Leave a Reply</h3>
+            <form>
+                <textarea class="input" style="height: 120px; margin-bottom: 15px;" placeholder="Type your reply here..."></textarea>
+                <button type="button" class="btn primary" onclick="alert('Reply posted!')">Post Reply</button>
+            </form>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    fetch('sidebar.html').then(res => res.text()).then(data => document.getElementById('sidebar-container').innerHTML = data);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents - NezxAsia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* --- Page Specific Styles for Search & Table --- */
+        
+        /* Filter Section Layout */
+        .filter-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            border: 1px solid rgba(10, 20, 30, 0.04);
+        }
+
+        .search-row {
+            margin-bottom: 15px;
+        }
+
+        .controls-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #dae1e7;
+            background: #fff;
+            color: #0f2430;
+            font-size: 14px;
+            outline: none;
+            min-width: 140px;
+        }
+
+        /* Table Layout */
+        .table-container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden; 
+            border: 1px solid rgba(10, 20, 30, 0.04);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        thead {
+            background: #f8fbff;
+            border-bottom: 2px solid #eef6fb;
+        }
+
+        th {
+            padding: 15px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 15px 20px;
+            font-size: 14px;
+            color: #233b46;
+            border-bottom: 1px solid #f0f4f8;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #fbfdff;
+        }
+
+        /* Badges for File Types */
+        .badge-type {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            min-width: 45px;
+            text-align: center;
+        }
+
+        .pdf { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
+        .doc { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+
+        /* Action Button */
+        .btn-view {
+            padding: 6px 16px;
+            background: #6c7a89;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+        
+        .btn-view:hover {
+            background: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">NA</div>
+        <div><strong>NezxAsia</strong><div class="muted">Knowledge Capture</div></div>
+      </div>
+      <div class="top-actions">
+        <div class="search"><input placeholder="Search documents, experts..." /></div>
+        <div class="avatar">A</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      
+      <div id="sidebar-container"></div>
+      
+      <main class="main">
+        
+        <div class="page-head">
+            <div>
+                <h2 style="margin:0;">All Documents</h2>
+                <div class="muted">Browse and search documents across all departments</div>
+            </div>
+             <div class="top-actions"></div> 
+        </div>
+
+        <div style="height:20px"></div>
+
+        <div class="filter-container">
+            <div class="search-row" style="display: flex; align-items: center; gap: 10px;">
+                <label style="width: auto; margin: 0; text-align: left;">Search:</label>
+                <input type="text" class="input" placeholder="Search by title..." style="text-align: left;">
+            </div>
+
+            <div class="controls-row">
+                <div class="filter-group">
+                    <label style="width: auto; margin: 0;">Filters:</label>
+                    <select class="filter-select"><option>Department</option><option>IT</option><option>HR</option></select>
+                    <select class="filter-select"><option>Document Type</option><option>PDF</option><option>DOC</option></select>
+                    <select class="filter-select"><option>Year</option><option>2025</option><option>2024</option></select>
+                </div>
+
+                <div class="filter-group" style="margin-left: auto;">
+                    <label style="width: auto; margin: 0;">Sort By:</label>
+                    <select class="filter-select"><option>Newest</option><option>Oldest</option></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 80px;">Type</th>
+                        <th>Document Title</th>
+                        <th>Department</th>
+                        <th>Updated</th>
+                        <th style="text-align: center;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge-type pdf">PDF</span></td>
+                        <td><strong>IT Security Manual</strong></td>
+                        <td>IT</td>
+                        <td>12/11/2025</td>
+                        <td style="text-align: center;">
+                            <a href="view-document.html" class="btn-view">View</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="badge-type doc">DOC</span></td>
+                        <td><strong>Leave Request Form</strong></td>
+                        <td>HR</td>
+                        <td>12/11/2025</td>
+                        <td style="text-align: center;">
+                            <a href="view-document.html" class="btn-view">View</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="badge-type pdf">PDF</span></td>
+                        <td><strong>Suspicious Transaction SOP</strong></td>
+                        <td>Compliance</td>
+                        <td>10/11/2025</td>
+                        <td style="text-align: center;">
+                            <a href="view-document.html" class="btn-view">View</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+        
+        // Highlight active link
+        const currentPath = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll('.nav-item');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+      })
+      .catch(error => console.error('Error loading sidebar:', error));
+  </script>
+
+</body>
+</html>

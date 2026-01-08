@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>View Document — NezxAsia</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Specific styles for the View Page layout */
+    .view-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+    
+    /* Simulate a PDF Viewer container */
+    .doc-preview {
+      background: #f0f2f5;
+      border: 1px dashed #cbd5e0;
+      border-radius: 8px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: var(--muted);
+      margin-top: 16px;
+    }
+
+    .tag {
+        background: #eef6fb;
+        color: #07345f;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-right: 5px;
+    }
+
+    @media(max-width: 900px) {
+      .view-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">NA</div>
+        <div><strong>NezxAsia</strong><div class="muted">Knowledge Capture</div></div>
+      </div>
+      <div class="top-actions">
+        <div class="search"><input placeholder="Search documents, experts..." /></div>
+        <div class="avatar">A</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <div id="sidebar-container"></div>
+      
+      <main class="main">
+        
+        <div class="page-head">
+            <div>
+                <div class="muted" style="font-size:12px; margin-bottom:4px;">Documents / Compliance / SOPs</div>
+                <h2 style="display:inline-block; margin-right: 10px;">Suspicious Transaction Reporting SOP</h2>
+                <span class="badge">Internal</span>
+            </div>
+            <div class="top-actions">
+                 <button class="btn ghost" onclick="alert('Added to bookmarks')">Bookmark</button>
+                 <button class="btn primary" onclick="alert('Downloading...')">Download PDF</button>
+            </div>
+        </div>
+
+        <div style="height:20px"></div>
+
+        <div class="view-grid">
+            
+            <div class="left-col">
+                
+                <div class="card">
+                    <h3>Executive Summary</h3>
+                    <p style="color:#444; margin-bottom: 20px;">
+                        This Standard Operating Procedure (SOP) outlines the mandatory steps for identifying, documenting, and reporting suspicious transactions in accordance with the Anti-Money Laundering (AML) Act 2001. All frontline staff in Malaysia branches must adhere to this workflow.
+                    </p>
+                    
+                    <div>
+                        <span class="muted" style="font-size:13px; margin-right:10px;">Tags:</span>
+                        <span class="tag">#compliance</span>
+                        <span class="tag">#aml</span>
+                        <span class="tag">#reporting</span>
+                    </div>
+
+                    <div class="doc-preview">
+                        <div style="font-size: 48px; margin-bottom: 10px;">📄</div>
+                        <strong>Suspicious_Transaction_SOP_v2.0.pdf</strong>
+                        <div class="muted">2.4 MB • PDF Document</div>
+                        <div style="height:15px"></div>
+                        <button class="btn primary">Preview Document</button>
+                    </div>
+                </div>
+
+                <div style="height:20px"></div>
+
+                <div class="card">
+                    <h3>Comments & Feedback</h3>
+                    
+                    <div style="display:flex; gap:12px; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:15px;">
+                        <div class="avatar" style="background:#e8fbf4; color:#0fb6a8;">R</div>
+                        <div>
+                            <div style="font-weight:bold; font-size:14px;">Rizal K. <span class="muted" style="font-weight:400; font-size:12px;">• 2 days ago</span></div>
+                            <div style="font-size:14px; margin-top:4px;">Section 4.2 regarding "Immediate Freezing" needs clarification. Does this apply to savings accounts under RM5,000?</div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; gap:10px;">
+                        <input class="input" placeholder="Ask a question or leave feedback..." style="flex:1;">
+                        <button class="btn ghost">Post</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right-col">
+                
+                <div class="card meta-panel">
+                    <h3>Document Details</h3>
+                    
+                    <div class="meta-row">
+                        <div class="muted">Status</div>
+                        <div style="color: green; font-weight:bold;">● Active / Effective</div>
+                    </div>
+
+                    <div class="meta-row">
+                        <div class="muted">Owner</div>
+                        <div><strong>Hana Ahmed</strong></div>
+                    </div>
+                    
+                    <div class="meta-row">
+                        <div class="muted">Department</div>
+                        <div>Compliance</div>
+                    </div>
+
+                    <div class="meta-row">
+                        <div class="muted">Branch</div>
+                        <div>Malaysia HQ</div>
+                    </div>
+
+                    <div class="meta-row">
+                        <div class="muted">Effective Date</div>
+                        <div>01 Jan 2026</div>
+                    </div>
+
+                    <div class="meta-row">
+                        <div class="muted">Review Date</div>
+                        <div>01 Jan 2027</div>
+                    </div>
+                </div>
+
+                <div style="height:15px"></div>
+
+                <div class="card meta-panel">
+                    <h3>Subject Matter Experts</h3>
+                    <div class="muted" style="margin-bottom:10px; font-size:13px;">Contact these experts for clarification:</div>
+                    
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+                        <div class="avatar" style="width:32px; height:32px; font-size:12px;">H</div>
+                        <div style="font-size:14px;"><strong>Hana Ahmed</strong><br><span class="muted" style="font-size:11px;">Head of Compliance</span></div>
+                    </div>
+                    
+                     <div style="display:flex; align-items:center; gap:10px;">
+                        <div class="avatar" style="width:32px; height:32px; font-size:12px; background:#f0f0f0; color:#333;">IT</div>
+                        <div style="font-size:14px;"><strong>IT Security Team</strong><br><span class="muted" style="font-size:11px;">System Support</span></div>
+                    </div>
+                </div>
+
+                <div style="height:15px"></div>
+
+                <div class="card meta-panel">
+                    <h3>Version History</h3>
+                    <ul style="margin:0;padding:0;list-style:none">
+                        <li style="padding:10px 0; border-bottom:1px dashed rgba(10,20,30,0.05)">
+                            <div style="display:flex; justify-content:space-between; font-size:14px;">
+                                <strong>v2.0 (Current)</strong>
+                                <span class="muted">Today</span>
+                            </div>
+                            <div class="muted" style="font-size:12px;">Updated for 2026 AML Act amendment.</div>
+                        </li>
+                        <li style="padding:10px 0;">
+                            <div style="display:flex; justify-content:space-between; font-size:14px; opacity:0.7;">
+                                <strong>v1.0</strong>
+                                <span class="muted">Oct 2024</span>
+                            </div>
+                            <div class="muted" style="font-size:12px;">Initial release.</div>
+                            <a href="#" style="font-size:12px; color:var(--primary);">View Archived</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="height:15px"></div>
+                
+                 <div class="card" style="background:#fff5f5; border:1px solid #fed7d7;">
+                    <h4 style="margin:0 0 10px 0; color:#c53030;">Admin Actions</h4>
+                    <button class="btn ghost" style="width:100%; border-color:#c53030; color:#c53030; margin-bottom:8px;" onclick="openModal()">Request Changes</button>
+                    <button class="btn ghost" style="width:100%;">View Audit Log</button>
+                 </div>
+
+            </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="modal" class="modal-back">
+    <div class="modal">
+      <h3>Request Changes / Update</h3>
+      <p class="muted">Submit a request to the document owner to update this SOP.</p>
+      <div style="height:8px"></div>
+      <div class="form-row">
+          <label>Reason for update</label>
+          <textarea placeholder="e.g., The flowchart in section 3 is outdated..."></textarea>
+      </div>
+      <div style="height:12px"></div>
+      <div style="text-align:right">
+          <button class="btn ghost" onclick="closeModal()">Cancel</button>
+          <button class="btn primary" onclick="alert('Request sent to Hana Ahmed');closeModal()">Send Request</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+        const navLinks = document.querySelectorAll('.nav-item');
+ 
+      })
+      .catch(error => console.error('Error loading sidebar:', error));
+
+    function openModal(){document.getElementById('modal').style.display='flex'}
+    function closeModal(){document.getElementById('modal').style.display='none'}
+  </script>
+</body>
+</html>
